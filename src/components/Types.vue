@@ -20,6 +20,7 @@ defineProps<{ types: Array<string> }>()
     display: flex;
     gap: 10px;
     margin-bottom: 10px;
+	justify-content: center;
 }
 
 .pokemon-type {

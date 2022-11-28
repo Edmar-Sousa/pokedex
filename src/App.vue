@@ -1,12 +1,14 @@
 <template>
     <div class="app" v-bind:style="`background: ${ colorPokemon };`">
         <template v-if="!loadding && pokemon.getCurrentPokemon">
-            <BulletComponent 
-                v-bind:count="10" 
-                v-bind:min="0"
-                v-bind:bulletActivate="bulletActivatePokemon"
-                v-on:next="handleNextPokemon" 
-                v-on:back="handleBackPokemon" />
+			<div class="buckets">
+				<BulletComponent
+				    v-bind:count="10" 
+				    v-bind:min="0"
+				    v-bind:bulletActivate="bulletActivatePokemon"
+				    v-on:next="handleNextPokemon" 
+				    v-on:back="handleBackPokemon" />
+			</div>
     
             <HeaderComponent 
 				v-bind:id="pokemon.getCurrentPokemon.id" 
@@ -97,6 +99,17 @@ async function handleBackPokemon() {
     font-weight: bold;
     font-family: Roboto, Arial, Helvetica, sans-serif;
     color: rgb(156, 156, 156);
+}
+
+.buckets {
+    width: 100%;
+    height: 40px;
+
+    position: absolute;
+	top: 10px;
+
+    display: flex;
+    justify-content: center;
 }
 
 </style>
