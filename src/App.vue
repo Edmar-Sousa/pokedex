@@ -3,6 +3,7 @@
         <template v-if="!loadding && pokemon.getCurrentPokemon">
             <BulletComponent 
                 v-bind:count="10" 
+                v-bind:min="0"
                 v-bind:bulletActivate="bulletActivatePokemon"
                 v-on:next="handleNextPokemon" 
                 v-on:back="handleBackPokemon" />

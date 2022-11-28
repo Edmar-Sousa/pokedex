@@ -9,7 +9,7 @@
                 alt="umbreon"
                 v-bind:class="{ 'view-stats' : activateIndexTab != 0 }"/>
 
-            <div>
+            <div class="right-container">
                 <TypesComponent class="desktop-show" v-bind:types="pokemon.getCurrentPokemon.types" />
 
                 <Transition>
@@ -75,7 +75,7 @@ function update(value: number) {
     height: 40px;
 
     position: absolute;
-    bottom: 20px;
+	bottom: 10px;
 
     display: flex;
     justify-content: center;
@@ -115,6 +115,11 @@ function update(value: number) {
     width: 40%;
 }
 
+.right-container {
+	flex: 1;
+	padding: 0 10px;
+}
+
 .desktop-show {
     display: none;
 }
@@ -137,7 +142,7 @@ function update(value: number) {
 }
 
 
-@media (min-width: 500px) {
+@media (min-width: 530px) {
     .bucket,
     .desktop-hidden {
         display: none;

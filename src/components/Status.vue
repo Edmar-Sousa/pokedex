@@ -38,7 +38,7 @@ const iconsStats = ['fa-heart', 'fa-arrow-up', 'fa-shield', 'fa-bolt', 'fa-bolt'
 }
 
 .pokemon-stats ul {
-    width: 90%;
+    width: 100%;
     list-style: none;
 }
 

@@ -3,7 +3,8 @@
         <div>
             <button 
                 class="button"
-                v-on:click="back">
+                v-on:click="back"
+				v-bind:disabled="bulletActivate == min">
                     <i class="fa-solid fa-angle-left"></i>
             </button>
         </div>
@@ -31,7 +32,14 @@
 
 import { ref, watch } from "vue";
 
-const props = defineProps<{ count: number, bulletActivate: number }>()
+const props = defineProps<{ 
+	count: number, 
+	bulletActivate: number,
+	min: {
+		type: number,
+		required: false
+	} }>()
+
 const emit = defineEmits<{
     (event: 'change', value: number): void,
     (event: 'next'): void,
@@ -80,6 +88,7 @@ function back() {
 
 .bullets-container {
     display: flex;
+	align-items: center;
 }
 
 .bullet { 
