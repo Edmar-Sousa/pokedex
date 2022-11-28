@@ -35,10 +35,7 @@ import { ref, watch } from "vue";
 const props = defineProps<{ 
 	count: number, 
 	bulletActivate: number,
-	min: {
-		type: number,
-		required: false
-	} }>()
+	min: number }>()
 
 const emit = defineEmits<{
     (event: 'change', value: number): void,
