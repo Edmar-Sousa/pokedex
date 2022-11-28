@@ -13,14 +13,20 @@
                 <TypesComponent class="desktop-show" v-bind:types="pokemon.getCurrentPokemon.types" />
 
                 <Transition>
-                    <StatusComponent v-show="activateIndexTab == 1" v-bind:stats="pokemon.getCurrentPokemon.stats" class="show" />
+                    <StatusComponent 
+						v-show="activateIndexTab == 1" 
+						v-bind:stats="pokemon.getCurrentPokemon.stats" class="show" />
                 </Transition>
             </div>
         </div>
 
 
         <div class="bucket">
-            <BulletComponent v-bind:count="2" v-on:change="update" v-bind:bulletActivate="activateIndexTab" />
+            <BulletComponent 
+				v-bind:count="2" 
+				v-bind:bulletActivate="activateIndexTab"
+				v-bind:min="-1"
+				v-on:change="update" />
         </div> 
     </main>
 	
